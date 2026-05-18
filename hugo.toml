@@ -1,0 +1,11 @@
+baseURL = "https://4ad.app/"
+locale = "en_GB"
+title = "4AD: Companion"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+description = "A digital party tracker for playing Four Against Darkness wherever you are."
+
+[caches]
+[caches.images]
+dir = ':cacheDir/images'
