@@ -1,0 +1,30 @@
+<footer class="site-footer" {{ if .ShowDownload }} id="download" {{ end }}>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="/images/icon.png" alt="" width="40" height="40" />
+
+      <p>4AD: Companion</p>
+    </div>
+
+    <div class="footer-notice">
+      <p>
+        Four Against Darkness is a game by Andrea Sfiligoi, published by
+        <a href="https://www.ganeshagames.net/">Ganesha Games</a>.
+      </p>
+
+      <p>
+        <strong>Disclaimer</strong> This app is not affiliated with or endorsed by Ganesha Games.
+      </p>
+    </div>
+
+    <div class="footer-auxiliary" aria-label="Auxiliary links">
+      <p>&copy; 2026 Tom Bell.</p>
+
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </div>
+
+  {{ if .ShowDownload }}
+  <a class="button button-primary" href="#">Coming soon</a>
+  {{ end }}
+</footer>

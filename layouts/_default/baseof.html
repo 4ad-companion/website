@@ -1,0 +1,11 @@
+<!doctype html>
+
+<html lang='{{ site.Language.Locale | default "en" }}'>
+  {{ partial "head.html" . }}
+
+  <body>
+    <!-- prettier-ignore -->
+    {{ partial "header.html" (dict "IsHome" .IsHome) }} {{ block "main" . }} {{ end }}
+    {{ partial "footer.html" (dict "ShowDownload" .IsHome) }} {{ block "scripts" . }} {{ end }}
+  </body>
+</html>

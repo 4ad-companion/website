@@ -1,38 +1,4 @@
-<!doctype html>
-
-<html lang='{{ site.Language.Locale | default "en" }}'>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ site.Params.description }}" />
-
-    <title>{{ site.Title }}</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-
-    {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-  </head>
-
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="4AD: Companion home">
-        <img src="/images/icon.png" alt="" width="44" height="44" />
-        <span>4AD: Companion</span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#features">Features</a>
-        <a href="#screenshots">Screenshots</a>
-        <a href="#download">Download</a>
-      </nav>
-    </header>
-
+{{ define "main" }}
     <main id="top">
       <section class="hero section">
         <div class="hero-copy">
@@ -40,7 +6,7 @@
 
           <p class="platform">For iPad and iPhone.</p>
 
-          <h1>Your party, ready wherever you play</h1>
+          <h1><em>Your party</em>, ready wherever you play</h1>
 
           <p class="hero-text">
             4AD: Companion keeps character notes, resources, and party status for Four Against
@@ -63,13 +29,15 @@
 
       <section class="section features" id="features">
         <div class="section-heading">
-          <h2>Start tracking your party digitally</h2>
+          <h2>Start tracking <em>your party</em> digitally</h2>
+
           <p>Keep the character details that usually live on loose paper in one portable place.</p>
         </div>
 
         <div class="feature-list">
           <article class="feature-card">
             <h3>Party tracking</h3>
+
             <p>
               Track characters, resources, conditions, and quick notes on iPad or iPhone so setup
               and packing away stay simple.
@@ -78,13 +46,17 @@
 
           <article class="feature-card">
             <span class="feature-tag">Coming soon</span>
+
             <h3>Session tools</h3>
+
             <p>Dice, encounter, treasure, and reference helpers are coming soon.</p>
           </article>
 
           <article class="feature-card">
             <span class="feature-tag">Coming soon</span>
+
             <h3>Dungeon mapping</h3>
+
             <p>Dungeon mapping tools are coming soon.</p>
           </article>
         </div>
@@ -92,10 +64,10 @@
 
       <section class="section screenshots" id="screenshots">
         <div class="section-heading">
-          <h2>Built around your party sheet</h2>
-          <p>
-            Focused on managing your party, tracking resources, and keeping the session moving.
-          </p>
+          <h2>Built around <em>your party</em> sheet</h2>
+
+          <p>Focused on managing your party, tracking resources, and keeping the session moving.</p>
+
           <p class="section-note">Screenshots are current placeholders.</p>
         </div>
 
@@ -118,6 +90,7 @@
                 decoding="async"
               />
             </button>
+
             <div class="screenshot-card-heading">
               <h3>Party management</h3>
             </div>
@@ -141,8 +114,10 @@
                 decoding="async"
               />
             </button>
+
             <div class="screenshot-card-heading">
               <h3>Session tools</h3>
+
               <span class="feature-tag">Coming soon</span>
             </div>
           </article>
@@ -165,8 +140,10 @@
                 decoding="async"
               />
             </button>
+
             <div class="screenshot-card-heading">
               <h3>Dungeon mapping</h3>
+
               <span class="feature-tag">Coming soon</span>
             </div>
           </article>
@@ -195,29 +172,9 @@
       </section>
     </main>
 
-    <footer class="site-footer" id="download">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <img src="/images/icon.png" alt="" width="40" height="40" />
-          <p>4AD: Companion</p>
-        </div>
+{{ end }}
 
-        <div class="footer-notice">
-          <p>
-            Four Against Darkness is a game by Andrea Sfiligoi, published by
-            <a href="https://www.ganeshagames.net/">Ganesha Games</a>.
-          </p>
-
-          <p>
-            <strong>Disclaimer</strong> This app is not affiliated with or endorsed by Ganesha
-            Games.
-          </p>
-        </div>
-      </div>
-
-      <a class="button button-primary" href="#">Coming soon</a>
-    </footer>
-
+{{ define "scripts" }}
     <script>
       const screenshotDialog = document.querySelector("#screenshot-dialog");
       const screenshotDialogImage = document.querySelector("#screenshot-dialog-image");
@@ -248,5 +205,4 @@
         activeScreenshotTrigger?.focus();
       });
     </script>
-  </body>
-</html>
+{{ end }}

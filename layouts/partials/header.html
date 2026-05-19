@@ -1,0 +1,14 @@
+{{ $isHome := .IsHome }}
+
+<header class="site-header">
+  <a class="brand" href='{{ cond $isHome "#top" "/" }}' aria-label="4AD: Companion home">
+    <img src="/images/icon.png" alt="" width="44" height="44" />
+    <span>4AD: Companion</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href='{{ cond $isHome "#features" "/#features" }}'>Features</a>
+    <a href='{{ cond $isHome "#screenshots" "/#screenshots" }}'>Screenshots</a>
+    <a href='{{ cond $isHome "#download" "/#download" }}'>Download</a>
+  </nav>
+</header>
