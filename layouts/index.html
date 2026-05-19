@@ -1,0 +1,173 @@
+<!doctype html>
+
+<html lang='{{ site.Language.Locale | default "en" }}'>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ site.Params.description }}" />
+
+    <title>{{ site.Title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="4AD: Companion home">
+        <img src="/images/icon.png" alt="" width="44" height="44" />
+        <span>4AD: Companion</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#download">Download</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <img class="hero-icon" src="/images/icon.png" alt="" width="116" height="116" />
+
+          <p class="platform">For iPad and iPhone.</p>
+
+          <h1>Your party, ready wherever you play</h1>
+
+          <p class="hero-text">
+            4AD: Companion keeps character notes, resources, and party status on your device, so you
+            can start a run without spreading paper across the table.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#download">Coming soon</a>
+            <a class="button button-secondary" href="#screenshots">View screenshots</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-band" aria-label="Overview">
+        <p>
+          Digital tracking for lighter sessions: keep the party sheet with you, whether you are
+          playing at home, travelling, or fitting in a quick delve.
+        </p>
+      </section>
+
+      <section class="section features" id="features">
+        <div class="section-heading">
+          <h2>Start with digital party tracking</h2>
+          <p>Keep the character details that usually live on loose paper in one portable place.</p>
+        </div>
+
+        <div class="feature-list">
+          <article class="feature-card">
+            <h3>Party tracking</h3>
+            <p>
+              Track characters, resources, conditions, and quick notes on iPad or iPhone so setup
+              and packing away stay simple.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Coming soon</span>
+            <h3>Dungeon mapping</h3>
+            <p>Mapping is planned for a future release after the core party tracker is settled.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Coming soon</span>
+            <h3>Session tools</h3>
+            <p>
+              Encounter, treasure, and reference helpers are planned after the first party-focused
+              version.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section screenshots" id="screenshots">
+        <div class="section-heading">
+          <h2>Party tracking screenshots coming soon</h2>
+          <p>
+            Reserved space for the first iPad and iPhone screens focused on portable party tracking.
+          </p>
+        </div>
+
+        <div class="screenshot-grid">
+          <article class="screenshot-card">
+            <div class="screenshot-placeholder">
+              <div class="placeholder-header"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>Party management</h3>
+          </article>
+
+          <article class="screenshot-card">
+            <div class="screenshot-placeholder">
+              <div class="placeholder-header"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>Dungeon mapping</h3>
+          </article>
+
+          <article class="screenshot-card">
+            <div class="screenshot-placeholder">
+              <div class="placeholder-header"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>Session tools</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="section roadmap" id="roadmap">
+        <div>
+          <h2>Made for iPad and iPhone</h2>
+          <p>
+            The first version is designed around digital party tracking on iPad and iPhone, making
+            it easier to play without a full table setup. Dungeon mapping and session tools will
+            come later.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="download">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="/images/icon.png" alt="" width="40" height="40" />
+          <p>4AD: Companion</p>
+        </div>
+
+        <div class="footer-notice">
+          <p>
+            Four Against Darkness is a game by Andrea Sfiligoi, published by
+            <a href="https://www.ganeshagames.net/">Ganesha Games</a>.
+          </p>
+
+          <p>
+            <strong>Disclaimer</strong> This app is not affiliated with or endorsed by Ganesha
+            Games.
+          </p>
+        </div>
+      </div>
+
+      <a class="button button-primary" href="#">Coming soon</a>
+    </footer>
+  </body>
+</html>
