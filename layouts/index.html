@@ -29,7 +29,6 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
-        <a href="#roadmap">Roadmap</a>
         <a href="#download">Download</a>
       </nav>
     </header>
@@ -44,8 +43,8 @@
           <h1>Your party, ready wherever you play</h1>
 
           <p class="hero-text">
-            4AD: Companion keeps character notes, resources, and party status on your device, so you
-            can start a run without spreading paper across the table.
+            4AD: Companion keeps character notes, resources, and party status for Four Against
+            Darkness on your device, so you can start a run without spreading paper across the table.
           </p>
 
           <div class="hero-actions">
@@ -57,14 +56,14 @@
 
       <section class="section intro-band" aria-label="Overview">
         <p>
-          Digital tracking for lighter sessions: keep the party sheet with you, whether you are
-          playing at home, travelling, or fitting in a quick delve.
+          Take your Four Against Darkness party sheet with you, whether you are playing at home,
+          travelling, or fitting in a quick delve.
         </p>
       </section>
 
       <section class="section features" id="features">
         <div class="section-heading">
-          <h2>Start with digital party tracking</h2>
+          <h2>Start tracking your party digitally</h2>
           <p>Keep the character details that usually live on loose paper in one portable place.</p>
         </div>
 
@@ -79,69 +78,118 @@
 
           <article class="feature-card">
             <span class="feature-tag">Coming soon</span>
-            <h3>Dungeon mapping</h3>
-            <p>Mapping is planned for a future release after the core party tracker is settled.</p>
+            <h3>Session tools</h3>
+            <p>Dice, encounter, treasure, and reference helpers are coming soon.</p>
           </article>
 
           <article class="feature-card">
             <span class="feature-tag">Coming soon</span>
-            <h3>Session tools</h3>
-            <p>
-              Encounter, treasure, and reference helpers are planned after the first party-focused
-              version.
-            </p>
+            <h3>Dungeon mapping</h3>
+            <p>Dungeon mapping tools are coming soon.</p>
           </article>
         </div>
       </section>
 
       <section class="section screenshots" id="screenshots">
         <div class="section-heading">
-          <h2>Party tracking screenshots coming soon</h2>
+          <h2>Built around your party sheet</h2>
           <p>
-            Reserved space for the first iPad and iPhone screens focused on portable party tracking.
+            Focused on managing your party, tracking resources, and keeping the session moving.
           </p>
+          <p class="section-note">Screenshots are current placeholders.</p>
         </div>
 
         <div class="screenshot-grid">
           <article class="screenshot-card">
-            <div class="screenshot-placeholder">
-              <div class="placeholder-header"></div>
-              <span></span>
-              <span></span>
-              <span></span>
+            <button
+              class="screenshot-trigger"
+              type="button"
+              data-modal-image="/images/screenshot-party-management.png"
+              data-modal-title="Party management"
+              aria-label="Open Party management app mockup"
+            >
+              <img
+                class="screenshot-image"
+                src="/images/screenshot-party-management-thumb.png"
+                alt=""
+                width="480"
+                height="360"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div class="screenshot-card-heading">
+              <h3>Party management</h3>
             </div>
-            <h3>Party management</h3>
           </article>
 
           <article class="screenshot-card">
-            <div class="screenshot-placeholder">
-              <div class="placeholder-header"></div>
-              <span></span>
-              <span></span>
-              <span></span>
+            <button
+              class="screenshot-trigger"
+              type="button"
+              data-modal-image="/images/screenshot-session-tools.png"
+              data-modal-title="Session tools"
+              aria-label="Open Session tools app mockup"
+            >
+              <img
+                class="screenshot-image"
+                src="/images/screenshot-session-tools-thumb.png"
+                alt=""
+                width="480"
+                height="360"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div class="screenshot-card-heading">
+              <h3>Session tools</h3>
+              <span class="feature-tag">Coming soon</span>
             </div>
-            <h3>Dungeon mapping</h3>
           </article>
 
           <article class="screenshot-card">
-            <div class="screenshot-placeholder">
-              <div class="placeholder-header"></div>
-              <span></span>
-              <span></span>
-              <span></span>
+            <button
+              class="screenshot-trigger"
+              type="button"
+              data-modal-image="/images/screenshot-dungeon-mapping.png"
+              data-modal-title="Dungeon mapping"
+              aria-label="Open Dungeon mapping app mockup"
+            >
+              <img
+                class="screenshot-image"
+                src="/images/screenshot-dungeon-mapping-thumb.png"
+                alt=""
+                width="480"
+                height="360"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div class="screenshot-card-heading">
+              <h3>Dungeon mapping</h3>
+              <span class="feature-tag">Coming soon</span>
             </div>
-            <h3>Session tools</h3>
           </article>
         </div>
+
+        <dialog class="screenshot-dialog" id="screenshot-dialog" aria-labelledby="screenshot-title">
+          <div class="screenshot-dialog-panel">
+            <div class="screenshot-dialog-heading">
+              <h3 id="screenshot-title"></h3>
+              <button class="screenshot-dialog-close" type="button">Close</button>
+            </div>
+            <img id="screenshot-dialog-image" alt="" />
+          </div>
+        </dialog>
       </section>
 
       <section class="section roadmap" id="roadmap">
         <div>
           <h2>Made for iPad and iPhone</h2>
           <p>
-            The first version is designed around digital party tracking on iPad and iPhone, making
-            it easier to play without a full table setup. Dungeon mapping and session tools will
-            come later.
+            The first version is designed around digital party tracking on iPad and iPhone. It
+            makes it easier to play without a full table setup. Dungeon mapping and session tools
+            will come later.
           </p>
         </div>
       </section>
@@ -169,5 +217,36 @@
 
       <a class="button button-primary" href="#">Coming soon</a>
     </footer>
+
+    <script>
+      const screenshotDialog = document.querySelector("#screenshot-dialog");
+      const screenshotDialogImage = document.querySelector("#screenshot-dialog-image");
+      const screenshotDialogTitle = document.querySelector("#screenshot-title");
+      const screenshotClose = document.querySelector(".screenshot-dialog-close");
+      let activeScreenshotTrigger = null;
+
+      document.querySelectorAll(".screenshot-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          activeScreenshotTrigger = trigger;
+          screenshotDialogImage.src = trigger.dataset.modalImage;
+          screenshotDialogImage.alt = `${trigger.dataset.modalTitle} app mockup`;
+          screenshotDialogTitle.textContent = trigger.dataset.modalTitle;
+          screenshotDialog.showModal();
+        });
+      });
+
+      screenshotClose.addEventListener("click", () => screenshotDialog.close());
+
+      screenshotDialog.addEventListener("click", (event) => {
+        if (event.target === screenshotDialog) {
+          screenshotDialog.close();
+        }
+      });
+
+      screenshotDialog.addEventListener("close", () => {
+        screenshotDialogImage.removeAttribute("src");
+        activeScreenshotTrigger?.focus();
+      });
+    </script>
   </body>
 </html>
