@@ -361,7 +361,8 @@ h3 {
 
 .screenshot-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: 36 / 25;
   object-fit: cover;
   object-position: center;
   border-radius: 6px;
@@ -425,6 +426,7 @@ h3 {
 
 #screenshot-dialog-image {
   width: 100%;
+  height: auto;
   max-height: calc(100vh - 126px);
   object-fit: contain;
   border-radius: 8px;

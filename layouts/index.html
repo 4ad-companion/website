@@ -68,7 +68,7 @@
 
           <p>Focused on managing your party, tracking resources, and keeping the session moving.</p>
 
-          <p class="section-note">Screenshots are current placeholders.</p>
+          <p class="section-note">Initial screenshots from the iPad app.</p>
         </div>
 
         <div class="screenshot-grid">
@@ -76,23 +76,23 @@
             <button
               class="screenshot-trigger"
               type="button"
-              data-modal-image="/images/screenshot-party-management.png"
-              data-modal-title="Party management"
-              aria-label="Open Party management app mockup"
+              data-modal-image="/images/screenshot-adventures.png"
+              data-modal-title="Adventures"
+              aria-label="Open Adventures app screenshot"
             >
               <img
                 class="screenshot-image"
-                src="/images/screenshot-party-management-thumb.png"
+                src="/images/screenshot-adventures-thumb.png"
                 alt=""
-                width="480"
-                height="360"
+                width="720"
+                height="500"
                 loading="lazy"
                 decoding="async"
               />
             </button>
 
             <div class="screenshot-card-heading">
-              <h3>Party management</h3>
+              <h3>Adventures</h3>
             </div>
           </article>
 
@@ -100,25 +100,23 @@
             <button
               class="screenshot-trigger"
               type="button"
-              data-modal-image="/images/screenshot-session-tools.png"
-              data-modal-title="Session tools"
-              aria-label="Open Session tools app mockup"
+              data-modal-image="/images/screenshot-party.png"
+              data-modal-title="Party sheet"
+              aria-label="Open Party sheet app screenshot"
             >
               <img
                 class="screenshot-image"
-                src="/images/screenshot-session-tools-thumb.png"
+                src="/images/screenshot-party-thumb.png"
                 alt=""
-                width="480"
-                height="360"
+                width="720"
+                height="500"
                 loading="lazy"
                 decoding="async"
               />
             </button>
 
             <div class="screenshot-card-heading">
-              <h3>Session tools</h3>
-
-              <span class="feature-tag">Coming soon</span>
+              <h3>Party sheet</h3>
             </div>
           </article>
 
@@ -126,25 +124,23 @@
             <button
               class="screenshot-trigger"
               type="button"
-              data-modal-image="/images/screenshot-dungeon-mapping.png"
-              data-modal-title="Dungeon mapping"
-              aria-label="Open Dungeon mapping app mockup"
+              data-modal-image="/images/screenshot-notes.png"
+              data-modal-title="Adventure notes"
+              aria-label="Open Adventure notes app screenshot"
             >
               <img
                 class="screenshot-image"
-                src="/images/screenshot-dungeon-mapping-thumb.png"
+                src="/images/screenshot-notes-thumb.png"
                 alt=""
-                width="480"
-                height="360"
+                width="720"
+                height="500"
                 loading="lazy"
                 decoding="async"
               />
             </button>
 
             <div class="screenshot-card-heading">
-              <h3>Dungeon mapping</h3>
-
-              <span class="feature-tag">Coming soon</span>
+              <h3>Adventure notes</h3>
             </div>
           </article>
         </div>
@@ -186,7 +182,7 @@
         trigger.addEventListener("click", () => {
           activeScreenshotTrigger = trigger;
           screenshotDialogImage.src = trigger.dataset.modalImage;
-          screenshotDialogImage.alt = `${trigger.dataset.modalTitle} app mockup`;
+          screenshotDialogImage.alt = `${trigger.dataset.modalTitle} app screenshot`;
           screenshotDialogTitle.textContent = trigger.dataset.modalTitle;
           screenshotDialog.showModal();
         });
