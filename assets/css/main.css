@@ -424,6 +424,57 @@ h3 {
   }
 }
 
+.screenshot-dialog-stage {
+  position: relative;
+  display: grid;
+}
+
+.screenshot-dialog-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  width: 42px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid rgba(181, 203, 255, 0.22);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(7, 13, 28, 0.76);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+
+  &::before {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    border-color: rgba(181, 203, 255, 0.5);
+    background: rgba(17, 30, 60, 0.86);
+  }
+}
+
+.screenshot-dialog-nav-previous {
+  left: 14px;
+
+  &::before {
+    content: "\2039";
+  }
+}
+
+.screenshot-dialog-nav-next {
+  right: 14px;
+
+  &::before {
+    content: "\203a";
+  }
+}
+
 #screenshot-dialog-image {
   width: 100%;
   height: auto;

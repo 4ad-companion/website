@@ -151,7 +151,19 @@
               <h3 id="screenshot-title"></h3>
               <button class="screenshot-dialog-close" type="button">Close</button>
             </div>
-            <img id="screenshot-dialog-image" alt="" />
+            <div class="screenshot-dialog-stage">
+              <button
+                class="screenshot-dialog-nav screenshot-dialog-nav-previous"
+                type="button"
+                aria-label="Show previous screenshot"
+              ></button>
+              <img id="screenshot-dialog-image" alt="" />
+              <button
+                class="screenshot-dialog-nav screenshot-dialog-nav-next"
+                type="button"
+                aria-label="Show next screenshot"
+              ></button>
+            </div>
           </div>
         </dialog>
       </section>
@@ -176,19 +188,55 @@
       const screenshotDialogImage = document.querySelector("#screenshot-dialog-image");
       const screenshotDialogTitle = document.querySelector("#screenshot-title");
       const screenshotClose = document.querySelector(".screenshot-dialog-close");
+      const screenshotPrevious = document.querySelector(".screenshot-dialog-nav-previous");
+      const screenshotNext = document.querySelector(".screenshot-dialog-nav-next");
+      const screenshotTriggers = Array.from(document.querySelectorAll(".screenshot-trigger"));
       let activeScreenshotTrigger = null;
+      let activeScreenshotIndex = 0;
 
-      document.querySelectorAll(".screenshot-trigger").forEach((trigger) => {
+      const openScreenshot = (index) => {
+        const trigger = screenshotTriggers.at(index);
+
+        if (!trigger) {
+          return;
+        }
+
+        activeScreenshotIndex = index;
+        activeScreenshotTrigger = trigger;
+        screenshotDialogImage.src = trigger.dataset.modalImage;
+        screenshotDialogImage.alt = `${trigger.dataset.modalTitle} app screenshot`;
+        screenshotDialogTitle.textContent = trigger.dataset.modalTitle;
+      };
+
+      const navigateScreenshot = (direction) => {
+        const nextIndex =
+          (activeScreenshotIndex + direction + screenshotTriggers.length) % screenshotTriggers.length;
+
+        openScreenshot(nextIndex);
+      };
+
+      screenshotTriggers.forEach((trigger, index) => {
         trigger.addEventListener("click", () => {
-          activeScreenshotTrigger = trigger;
-          screenshotDialogImage.src = trigger.dataset.modalImage;
-          screenshotDialogImage.alt = `${trigger.dataset.modalTitle} app screenshot`;
-          screenshotDialogTitle.textContent = trigger.dataset.modalTitle;
+          openScreenshot(index);
           screenshotDialog.showModal();
         });
       });
 
       screenshotClose.addEventListener("click", () => screenshotDialog.close());
+      screenshotPrevious.addEventListener("click", () => navigateScreenshot(-1));
+      screenshotNext.addEventListener("click", () => navigateScreenshot(1));
+
+      screenshotDialog.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          navigateScreenshot(-1);
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          navigateScreenshot(1);
+        }
+      });
 
       screenshotDialog.addEventListener("click", (event) => {
         if (event.target === screenshotDialog) {
