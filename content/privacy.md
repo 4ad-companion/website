@@ -3,15 +3,15 @@ title = "Privacy Policy"
 description = "Privacy policy for 4AD: Companion."
 +++
 
-4AD: Companion does not collect any data.
+4AD: Companion stores user-created content only on your device. The developer does not collect it or store it on external servers.
 
 ## Data collection
 
-The app does not collect, use, store, or share information from you or your device. It does not require an account, and it does not use data for advertising, tracking, analytics profiles, or sale to third parties.
+The developer does not collect, use, or share information from you or your device. The app does not require an account, and it does not use data for advertising, tracking, analytics profiles, or sale to third parties.
 
 ## App data
 
-4AD: Companion is designed for tracking your party and play session details on your device. That user-created app content is not collected by us.
+Party and play-session details you create are stored locally on your device. This content is not transmitted to or collected by the developer, and the developer cannot access it.
 
 ## Third-party sharing
 
@@ -21,4 +21,4 @@ We do not sell personal information, track you across apps or websites, or share
 
 If this policy changes, the updated version will be posted on this page.
 
-Last updated: 21 May 2026.
+Last updated: 2 August 2026.
