@@ -4,7 +4,7 @@ title = "4AD: Companion"
 disableKinds = ["taxonomy", "term"]
 
 [params]
-description = "A digital party tracker for playing Four Against Darkness wherever you are."
+description = "An offline iPhone and iPad companion for tracking Four Against Darkness parties, dungeon maps, sessions, encounters, and dice rolls."
 
 [caches]
 [caches.images]

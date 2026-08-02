@@ -1,4 +1,4 @@
-<footer class="site-footer" {{ if .ShowDownload }} id="download" {{ end }}>
+<footer class="site-footer" {{ if .ShowFeatures }} id="about" {{ end }}>
   <div class="footer-main">
     <div class="footer-brand">
       <img src="/images/icon.png" alt="" width="40" height="40" />
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  {{ if .ShowDownload }}
-  <a class="button button-primary" href="#">Coming soon</a>
+  {{ if .ShowFeatures }}
+  <a class="button button-primary" href="#features">Explore v1 features</a>
   {{ end }}
 </footer>

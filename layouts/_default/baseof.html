@@ -6,6 +6,6 @@
   <body>
     <!-- prettier-ignore -->
     {{ partial "header.html" (dict "IsHome" .IsHome) }} {{ block "main" . }} {{ end }}
-    {{ partial "footer.html" (dict "ShowDownload" .IsHome) }} {{ block "scripts" . }} {{ end }}
+    {{ partial "footer.html" (dict "ShowFeatures" .IsHome) }} {{ block "scripts" . }} {{ end }}
   </body>
 </html>
